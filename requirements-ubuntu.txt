@@ -1,0 +1,80 @@
+# GPT-SoVITS Ubuntu优化版依赖文件
+# 基于原requirements.txt，针对Ubuntu系统进行优化
+
+--no-binary=opencc
+
+# 核心数值计算库
+numpy<2.0
+scipy
+
+# 深度学习框架相关 (PyTorch通过conda安装)
+pytorch-lightning>=2.4
+torchmetrics<=1.5
+
+# 音频处理
+librosa==0.10.2
+ffmpeg-python
+av>=11
+
+# 机器学习和NLP
+transformers>=4.43,<=4.50
+peft
+sentencepiece
+tokenizers>=0.13,<1
+huggingface_hub>=0.13
+
+# 语音识别和处理
+funasr==1.0.27
+ctranslate2>=4.0,<5
+
+# 中文处理
+cn2an
+pypinyin
+jieba_fast
+jieba
+opencc
+
+# 日语处理
+pyopenjtalk>=0.4.1
+
+# 韩语处理
+g2pk2
+ko_pron
+
+# 粤语处理
+ToJyutping
+
+# 英语处理
+g2p_en
+
+# 语言检测和分割
+split-lang
+fast_langdetect>=0.3.1
+wordsegment
+
+# Web界面
+gradio<5
+fastapi[standard]>=0.115.2
+
+# 模型和数据源
+modelscope==1.10.0
+
+# 运行时推理 (根据平台选择)
+onnxruntime; platform_machine == "aarch64" or platform_machine == "arm64"
+onnxruntime-gpu; platform_machine == "x86_64" or platform_machine == "AMD64"
+
+# 工具库
+numba
+tensorboard
+tqdm
+chardet
+PyYAML
+psutil
+pydantic<=2.10.6
+
+# 模型架构
+x_transformers
+rotary_embedding_torch
+
+# Linux特定依赖
+python_mecab_ko; sys_platform != 'win32'
