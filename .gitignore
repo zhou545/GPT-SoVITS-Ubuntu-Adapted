@@ -18,14 +18,22 @@ venv
 .venv
 runtime/
 
-# 输出和日志
-output/
-logs/
-TEMP/
+# 输出和日志 (保留目录结构，但忽略大文件)
+output/**/*.wav
+output/**/*.mp3
+output/**/*.flac
+logs/*.log
+logs/**/*.log
+TEMP/**/*.cache
+TEMP/**/*.tmp
 
-# 模型权重文件 (通常很大，不适合上传到GitHub)
-SoVITS_weights*/
-GPT_weights*/
+# 模型权重文件 (保留目录结构，但忽略实际的权重文件)
+SoVITS_weights*/*.pth
+SoVITS_weights*/*.ckpt
+SoVITS_weights*/*.safetensors
+GPT_weights*/*.pth
+GPT_weights*/*.ckpt
+GPT_weights*/*.safetensors
 weight.json
 
 # 音频和媒体文件
