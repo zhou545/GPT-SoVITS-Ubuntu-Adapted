@@ -39,8 +39,10 @@ ffprobe*
 ref_audios/
 
 # 配置文件 (可能包含敏感信息)
-cfg.json
-speakers.json
+*.json
+!package.json
+!tsconfig.json
+!weight.json
 
 # 特定工具文件
 tools/AP_BWE_main/24kto48k/*
